@@ -1,6 +1,9 @@
 <div class="card">
   <div class="card-header">
-    {{ item.state }}
+
+    <span *ngIf="0 === item.state">A livrer</span>
+    <span *ngIf="1 === item.state">En cours de livraison</span>
+    <span *ngIf="2 === item.state">Livrée</span>
   </div>
   <div class="card-body">
     <h4 class="card-title">{{item.name}}</h4>

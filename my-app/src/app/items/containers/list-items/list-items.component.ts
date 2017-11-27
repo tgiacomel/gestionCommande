@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { COLLECTION } from '../../collection';
 
+import { COLLECTION } from '../../collection';
 import { Item } from '../../interface/item.model';
 
 @Component({
