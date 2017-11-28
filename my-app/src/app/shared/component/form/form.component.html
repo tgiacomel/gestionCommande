@@ -1,24 +1,23 @@
-<form class="form container" #form="ngForm" novalidate (ngSubmit)="process()">
+<form class="form container" [formGroup]="form" novalidate (ngSubmit)="process()">
 
      <div class="form-group">
-          <input #name="ngModel" [(ngModel)]="newItem.name" name="name" type="text" class="form-control" placeholder="Nom et prénom" required minlength="4">
-          <div class="alert alert-danger" *ngIf="name.invalid && name.touched">Champs invalide</div>
+          <input formControlName="name" name="name" type="text" class="form-control" placeholder="Nom et prénom">
+          <div class="alert alert-danger" *ngIf="isError('name')">le nom est invalide</div>
         </div>
 
       <div class="form-group">
-          <input  name="ref" [(ngModel)]="newItem.reference" type="text" class="form-control" placeholder="référence : 1234" required minlength="5">
-      </div>
+          <input formControlName="ref" name="ref" type="text" class="form-control" placeholder="référence : 1234">
+          <div class="alert alert-danger" *ngIf="isError('ref')">La référence est invalide</div>
+        </div>
 
       <div class="form-group">
-          <select name="state" [(ngModel)]="newItem.state" class="form-control" >
+          <select formControlName="state" name="state" class="form-control" >
               <option [ngValue]="state.ALIVRER">A Livrer</option>
               <option [ngValue]="state.ENCOURS">En cours</option>
               <option [ngValue]="state.LIVREE">Livrée</option>
             </select>
       </div>
-
-
       <div class="form-group">
-            <button [disabled]="form.invalid" type="submit" class="btn btn-primary">ajouter</button>
-        </div>
+          <button [disabled]="form.invalid" type="submit" class="btn btn-primary">ajouter</button>
+      </div>
       </form>

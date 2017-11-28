@@ -21,6 +21,6 @@ export class AddItemComponent implements OnInit {
 
   addItem(item: Item): void {
     this.collection.push(item);
-    this._Router.navigate(['/list']);
+    //this._Router.navigate(['/list']);
   }
 }
