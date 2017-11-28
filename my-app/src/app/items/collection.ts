@@ -14,4 +14,4 @@ export const COLLECTION =  [
     reference : 'REF125',
     state : 2
   }
-]
+];
