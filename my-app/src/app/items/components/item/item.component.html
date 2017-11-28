@@ -6,6 +6,7 @@
   <div class="card-body">
     <h4 class="card-title">{{item.name}}</h4>
     <p class="card-text">{{item.reference}}</p>
-    <button class="btn btn-primary"></button>
+    <button class="btn btn-primary" *ngIf="state.ALIVRER === item.state" (click)="changeState(item, state.ENCOURS)">Passer en cours</button>
+    <button class="btn btn-primary" *ngIf="state.ENCOURS === item.state" (click)="changeState(item, state.LIVREE)">Livrer commande</button>
   </div>
 </div>

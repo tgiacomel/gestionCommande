@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './component/home/home.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { CoreRoutingModule } from './core-routing.module';
+
+
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    CoreRoutingModule
   ],
   declarations: [
     HomeComponent,

@@ -20,4 +20,8 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  changeState (item: Item, state: State) {
+    item.state = state;
+  }
+
 }
