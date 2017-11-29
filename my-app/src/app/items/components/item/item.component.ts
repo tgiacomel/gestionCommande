@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { Item } from '../../interface/item.model';
 import { State } from '../../../shared/enums/state.enum';
+import { CollectionService } from '../../../core/service/collection/collection.service';
 
 @Component({
   selector: 'app-item',
@@ -15,13 +16,16 @@ export class ItemComponent implements OnInit {
   @Input('item')
   item: Item;
 
-  constructor() { }
+  constructor(private collectionService: CollectionService) { }
 
   ngOnInit() {
+
   }
 
   changeState (item: Item, state: State) {
+    this.collectionService.update(item, state);
     item.state = state;
+
   }
 
 }

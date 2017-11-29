@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Item } from '../../interface/item.model';
-import { COLLECTION } from '../../collection';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 import { ModalComponent } from '../../../shared/component/modal/modal.component';
+import { CollectionService } from '../../../core/service/collection/collection.service';
 
 @Component({
   selector: 'app-add-item',
@@ -14,15 +14,15 @@ import { ModalComponent } from '../../../shared/component/modal/modal.component'
 export class AddItemComponent implements OnInit {
 
 
-  collection: Item[] = COLLECTION;
-  constructor(private _Router: Router, private modalService: NgbModal ) { }
+  collection: Item[];
+  constructor(private _Router: Router, private modalService: NgbModal, private collectionService: CollectionService ) { }
 
   ngOnInit() {
-
+      this.collection = this.collectionService.collection;
   }
 
   addItem(item: Item): void {
-    this.collection.push(item);
+    this.collectionService.addItem(item);
     // this._Router.navigate(['/list']);
     this.open('Cmd correctement ajouté', '/list');
   }

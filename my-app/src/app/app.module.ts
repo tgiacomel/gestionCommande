@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
+import { CollectionService } from './core/service/collection/collection.service';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent
   ],
 
-  providers: [],
+  providers: [CollectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
