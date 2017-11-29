@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { MenuComponent } from './component/menu/menu.component';
 import { StateDirective } from './directive/state/state.directive';
 import { FormComponent } from './component/form/form.component';
+import { ModalComponent } from './component/modal/modal.component';
 
 
 
@@ -14,17 +16,23 @@ import { FormComponent } from './component/form/form.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
   declarations: [
     MenuComponent,
     StateDirective,
-    FormComponent
+    FormComponent,
+    ModalComponent
   ],
   exports : [
     MenuComponent,
     StateDirective,
-    FormComponent
+    FormComponent,
+    ModalComponent
+  ],
+  entryComponents : [
+    ModalComponent
   ]
 })
 export class SharedModule { }

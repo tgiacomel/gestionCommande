@@ -18,6 +18,7 @@ export class FormComponent implements OnInit {
   nameCtrl: FormControl;
   refCtrl: FormControl;
   stateCtrl: FormControl;
+
   constructor(private fb: FormBuilder) {
     this.nameCtrl = fb.control('', [
       Validators.required,
