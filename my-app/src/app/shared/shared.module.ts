@@ -9,6 +9,7 @@ import { StateDirective } from './directive/state/state.directive';
 import { FormComponent } from './component/form/form.component';
 import { ModalComponent } from './component/modal/modal.component';
 import { FilterPipe } from './pipes/filter/filter.pipe';
+import { SearchComponent } from './component/search/search.component';
 
 
 
@@ -25,13 +26,15 @@ import { FilterPipe } from './pipes/filter/filter.pipe';
     StateDirective,
     FormComponent,
     ModalComponent,
-    FilterPipe
+    FilterPipe,
+    SearchComponent
   ],
   exports : [
     MenuComponent,
     StateDirective,
     FormComponent,
     ModalComponent,
+    SearchComponent,
     FilterPipe
   ],
   entryComponents : [

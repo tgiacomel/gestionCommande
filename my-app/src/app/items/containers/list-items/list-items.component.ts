@@ -12,9 +12,14 @@ export class ListItemsComponent implements OnInit {
 
   collection: Item[];
   constructor(private collectionService: CollectionService) { }
+  filter: String = '';
 
   ngOnInit() {
     this.collection =  this.collectionService.collection;
+  }
+
+  addSearch(search: String) {
+      this.filter = search;
   }
 
 }
