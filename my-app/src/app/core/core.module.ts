@@ -6,6 +6,7 @@ import { HomeComponent } from './component/home/home.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { LoginComponent } from './component/login/login.component';
+import { CollectionService } from './service/collection/collection.service';
 
 
 
@@ -23,6 +24,9 @@ import { LoginComponent } from './component/login/login.component';
   exports : [
     HomeComponent,
     PageNotFoundComponent
+  ],
+  providers : [
+    CollectionService
   ]
 })
 export class CoreModule { }

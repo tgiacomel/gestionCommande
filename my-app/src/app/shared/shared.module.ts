@@ -8,6 +8,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import { StateDirective } from './directive/state/state.directive';
 import { FormComponent } from './component/form/form.component';
 import { ModalComponent } from './component/modal/modal.component';
+import { FilterPipe } from './pipes/filter/filter.pipe';
 
 
 
@@ -23,13 +24,15 @@ import { ModalComponent } from './component/modal/modal.component';
     MenuComponent,
     StateDirective,
     FormComponent,
-    ModalComponent
+    ModalComponent,
+    FilterPipe
   ],
   exports : [
     MenuComponent,
     StateDirective,
     FormComponent,
-    ModalComponent
+    ModalComponent,
+    FilterPipe
   ],
   entryComponents : [
     ModalComponent

@@ -1,4 +1,12 @@
-<ng-container *ngFor="let item of collection">
+<div class="container">
+  <div class="navbar navbar-light">
+      <form class="form-inline">
+          <input (keyup)="0" #search class="form-control" placeholder="search" aria-label="Search">
+      </form>
+    </div>
+</div>
+<ng-container *ngFor="let item of collection | filter:search.value">
+
   <app-item [item]='item'></app-item>
 
 </ng-container>
